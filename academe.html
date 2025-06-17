@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workplace</title>
+    <style>
+      /* Dropdown styles for navbar */
+     .navbar-links li {
+        position: relative; /* IMPORTANT: Make li the positioning context */
+      }
+
+      .navbar-links a {
+        border-radius: 8px;
+        transition: background-color 0.25s ease;
+      }
+
+      .navbar-links a:hover,
+      .navbar-links a:focus {
+        background-color: #e0e7ff;
+        outline: none;
+      }
+
+      /* Dropdown container */
+      .dropdown {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+        min-width: 180px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        z-index: 1000;
+      }
+
+      /* Show dropdown on hover */
+      .navbar-links li:hover > .dropdown,
+      .navbar-links li:focus-within > .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* Dropdown links */
+      .dropdown li {
+        list-style: none;
+      }
+
+      .dropdown li a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      .dropdown li a:hover,
+      .dropdown li a:focus {
+        background-color: #c7d2fe;
+        color: #1e3a8a;
+        outline: none;
+        border-radius: 8px;
+      }
+
+      /* Dropdown arrow icon next to TOPICS */
+      .dropdown-arrow {
+        margin-left: 6px;
+        font-size: 0.75em;
+        transition: transform 0.3s ease;
+      }
+
+      /* Rotate arrow on hover */
+      .navbar-links li:hover > a > .dropdown-arrow,
+      .navbar-links li:focus-within > a > .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        .navbar-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+        /* For mobile, dropdown should be toggleable (JS needed) - fallback */
+        .dropdown {
+          position: static;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0) !important;
+          box-shadow: none;
+          padding: 0;
+          background: transparent;
+          min-width: auto;
+        }
+        .dropdown li a {
+          padding-left: 32px;
+        }
+        .dropdown-arrow {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="style_acadame.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!--1st section-->
+    <div class="page-container">
+        <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#home">Gender &amp; Society</a>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li tabindex="0">
+        <a aria-haspopup="true" aria-expanded="false" aria-controls="topics-dropdown">
+          TOPICS
+          <i class="fas fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown" id="topics-dropdown" role="menu" aria-label="Topics submenu">
+          <li role="none">
+            <a role="menuitem" href="society.html">Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="gender.html">Gender</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="construct.html">Gender As Social Construction</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="family.html">Gender and Family</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="workplace.html">Gender in the Workplace</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="academe.html">Gender and The Academe</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mass-media.html">Mass Media in a Gendered Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="church.html">Gender and Development in the Church</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="politics.html">Gender and Politics</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="violence.html">Gender and Violence</a>
+          </li>
+          
+        </ul>
+      </li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <button type="submit" aria-label="Search"></button>
+    </div>
+  </nav>
+
+        <!-- 1st Content Section -->
+            <section class="hero-section">
+            <div class="image-container">
+                <img src="images/hands.png" alt="Gender Symbols and Hands" />
+            </div>
+            <div class="hero-text">
+                <h1>Gender in<br />the<br />Academe</h1>
+            </div>
+            </section>
+            <section class="quote-section">
+            <p>
+                <strong><em>
+                “Gender influences classroom participation and teacher-student interaction. Teachers may behave differently with male and female students, influencing their engagement and success in the classroom. Understanding how gender influences classroom dynamics can help educators build more inclusive and fair learning environments for all students.” -Dematala (2024)
+                </em></strong>
+            </p>
+            </section>
+
+             <!-- 2nd Content Section -->
+            <section class="gender-topics-section">
+            <div class="gender-topics-container">
+                <div class="topic green">School as Gender Socialization</div>
+                <div class="topic white">Legal Perspectives on Gendered School Setting: Implications to School Policies</div>
+                <div class="topic orange">School Affecting Gender-Based Role Differentiation</div>
+                <div class="topic yellow">Cavite State University: Gender and Development Frontier</div>
+            </div>
+            <div class="gender-symbols">
+                <img src="images/sign.png" alt="Gender Symbols" />
+            </div>
+            </section>
+
+            <!-- 3rd Section -->
+                <section class="socialization-section">
+                <div class="socialization-text">
+                    <h2>School as Gender Socialization</h2>
+
+                    <div class="image-text-pair">
+                    <img src="images/clip.png" alt="clip image" class="float-image" />
+                    <p>
+                        <strong>Socialization</strong> is the process through which people learn and acquire the characteristics of the social group to which they belong is called socialization. The socialization of individuals enables the preservation and sustainability of the characteristics, values and social norms because these are taught and transmitted from one generation to another. School plays a big role in gender socialization since it is one that influences every child’s socialization.
+                    </p>
+                    </div>
+
+                    <img src="images/discussion.png" alt="paperclips" class="socialization-paperclips" />
+
+                    <p>
+                    Gender role differentiations are influenced by school for several reasons, and sometimes it contributes to how they see each other. School is the place where gender gets deeply established in the way boys and girls think and behave with each other. And if you condone or ignore any violence, that is going to assume a major dimension later in life because it is seen as something acceptable.
+                    </p>
+
+                    <blockquote>
+                    “Many of the socialization processes that lead to gender differentiated outcomes, including gender segregation, are not well understood. In addition, more work is needed to identify effective means to prevent and minimize gender biased attitudes and behaviour. Future research is also needed to document the experiences of children who do not conform to traditional gender roles (e.g., children with same-sex parents or who are transgendered).”
+                    <br />
+                    <span>- Bigler (2013)</span>
+                    </blockquote>
+                </div>
+                </section>
+
+            <!-- 4th Section -->   
+            <section class="legal-perspective-section">
+                <div class="legal-perspective-container">
+                    <div class="legal-perspective-header">
+                    <span class="arrow-icon">➤</span>
+                    <h2>Legal Perspectives on Gendered School Setting: Implications to School Policies</h2>
+                    </div>
+                    <p class="legal-perspective-text">
+                    Schools in the Philippines are strictly implementing rules, especially on knowing the limits of our freedom. Almost all schools are accepting cross dressing for people who want to express themselves in any form they want. An exception is putting it in writing. Everyone is prohibited to label themselves in school papers the opposite of their sex. Another thing is in our comfort rooms. If the school has enough space, LGBTQIA+ have their separate comfort rooms, and if not, they have to go to their respective places.
+                    </p>
+                </div>
+                </section>
+
+             <!-- 5th Section -->     
+            <section class="gender-role-section">
+                <div class="gender-role-container">
+                    <div class="gender-role-text">
+                    <h2>School Affecting Gender-Based Role Differentiation</h2>
+                    <p>
+                        Schools in the Philippines are strictly implementing rules, especially on knowing the limits of our freedom.
+                        Almost all schools are accepting cross dressing for people who want to express themselves in any form they want.
+                        An exception is putting it in writing. Everyone is prohibited to label themselves in school papers the opposite of their sex.
+                        Another thing is in our comfort rooms. If the school has enough space, LGBTQIA+ have their separate comfort rooms,
+                        and if not, they have to go to their respective places.
+                    </p>
+                    </div>
+                    <div class="gender-role-image">
+                    <img src="images/people.png" alt="Gender Role Illustration">
+                    </div>
+                </div>
+                </section>
+            
+                <!-- 6th Section -->   
+            <section class="csu-gender-section">
+                <div class="csu-gender-container">
+                    <div class="csu-gender-image">
+                    <img src="images/last.png" alt="Cavite State University Gender Development Illustration">
+                    </div>
+                    <div class="csu-gender-text">
+                    <h2>Cavite State University: Gender and Development Frontier</h2>
+                    <p>
+                        The school has developed programs for people, especially students to be gender sensitive and to promote gender equality
+                        by adding “Gender and Society” into its curriculum. By this, we’re being taught about how society may affect someone’s gender.
+                        We were also taught how transgender people are being treated before—how they were being secluded because of them being different
+                        were not welcomed by our society, until now that there are laws to protect them and programs that will help the rest of the
+                        people understand them.
+                    </p>
+                    <p class="csu-gender-note">
+                        Their situation may not be perfect right now, but we all know that it is improving. They're starting to know that our society
+                        is doing something for everyone to feel comfortable and be free, of course with the help of our university.
+                    </p>
+                    </div>
+                </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+    </body>
+    

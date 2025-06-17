@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+      /* Dropdown styles for navbar */
+     .navbar-links li {
+        position: relative; /* IMPORTANT: Make li the positioning context */
+      }
+
+      .navbar-links a {
+        border-radius: 8px;
+        transition: background-color 0.25s ease;
+      }
+
+      .navbar-links a:hover,
+      .navbar-links a:focus {
+        background-color: #e0e7ff;
+        outline: none;
+      }
+
+      /* Dropdown container */
+      .dropdown {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+        min-width: 180px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        z-index: 1000;
+      }
+
+      /* Show dropdown on hover */
+      .navbar-links li:hover > .dropdown,
+      .navbar-links li:focus-within > .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* Dropdown links */
+      .dropdown li {
+        list-style: none;
+      }
+
+      .dropdown li a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      .dropdown li a:hover,
+      .dropdown li a:focus {
+        background-color: #c7d2fe;
+        color: #1e3a8a;
+        outline: none;
+        border-radius: 8px;
+      }
+
+      /* Dropdown arrow icon next to TOPICS */
+      .dropdown-arrow {
+        margin-left: 6px;
+        font-size: 0.75em;
+        transition: transform 0.3s ease;
+      }
+
+      /* Rotate arrow on hover */
+      .navbar-links li:hover > a > .dropdown-arrow,
+      .navbar-links li:focus-within > a > .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        .navbar-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+        /* For mobile, dropdown should be toggleable (JS needed) - fallback */
+        .dropdown {
+          position: static;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0) !important;
+          box-shadow: none;
+          padding: 0;
+          background: transparent;
+          min-width: auto;
+        }
+        .dropdown li a {
+          padding-left: 32px;
+        }
+        .dropdown-arrow {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="massmedia.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="page-container">
+         <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#home">Gender &amp; Society</a>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li tabindex="0">
+        <a aria-haspopup="true" aria-expanded="false" aria-controls="topics-dropdown">
+          TOPICS
+          <i class="fas fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown" id="topics-dropdown" role="menu" aria-label="Topics submenu">
+          <li role="none">
+            <a role="menuitem" href="society.html">Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="gender.html">Gender</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="construct.html">Gender As Social Construction</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="family.html">Gender and Family</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="workplace.html">Gender in the Workplace</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="academe.html">Gender and The Academe</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mass-media.html">Mass Media in a Gendered Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="church.html">Gender and Development in the Church</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="politics.html">Gender and Politics</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="violence.html">Gender and Violence</a>
+          </li>
+          
+        </ul>
+      </li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <button type="submit" aria-label="Search"></button>
+    </div>
+  </nav>
+
+            <div class="learnmore-section" id="home"> <div class="title-section">
+                <h1>Mass Media in a</h1>
+                <h1>Gendered</h1>
+                <h1>Society</h1>
+            </div>
+
+            <div class="image-section">
+                <img src="images/massmedia-front-page.png">
+            </div>
+        </div>
+
+         <div class="about-section" id="about"> <div class="about-header">Mass Media Portrays Gender</div>
+            <div class="text-block">
+                 <div class="top-right-lines">
+                    <div class="green"></div>
+                    <div class="red"></div>
+                    <div class="pink"></div>
+                 </div>
+                <div class="lefttext">
+                    <div class="paragraph-one">
+                        <p>Mass media plays a powerful role in shaping and reinforcing gender stereotypes, 
+                            objectification, and sexualization in society. Despite advances in gender equality, 
+                            media representations often continue to portray restrictive and traditional gender roles. 
+                            These portrayals influence how people perceive gender from an early age, strengthening 
+                            societal expectations that limit both men and women.
+                        </p>
+                    </div>
+                    <div class="paragraph-two">
+                        <p>Media frequently presents women in objectified or sexualized ways, 
+                            which can contribute to body image issues, lower self-esteem, 
+                            and acceptance of sexist attitudes. Men are often shown through 
+                            stereotypical lenses emphasizing strength, dominance, and agency, 
+                            reinforcing harmful norms about masculinity. These portrayals not only 
+                            affect individual well-being but also contribute to broader social issues 
+                            like sexism, harassment, and career limitations, especially for women. Ultimately, 
+                            mass media both reflects and shapes cultural views on gender, making it a key area 
+                            for promoting more balanced and equitable representations.
+
+                        </p>
+                    </div>
+                     <div class="pentagon-container">
+                        <div class="pentagon">
+                            <span class="pentagon=text">GENDER STEREOTYPES IN MEDIA</span>
+                        </div>
+                        <div class="pentagon">
+                            <span class="pentagon=text">REPRESENTATION OF LGBTQ+ IDENTITIES IN MASS MEDIA</span>
+                        </div>
+                        <div class="pentagon">
+                            <span class="pentagon=text">POSITIVE CHANGES: INCLUSIVE ADVERTISING AND DIVERSE RERPRESENTATION</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <section class="stereotype-layout">
+            <div class="left-column">
+                <h1>Gender<br>Stereotypes in<br>Media</h1>
+                <p>Harmful stereotypes can be overt, like “women are irrational,” or subtle, such as “women are nurturing.” They disproportionately affect marginalized groups, including women from minority communities, those with disabilities, and women of lower economic status.</p>
+                <img src="images/sillouhette1.png" alt="Silhouette Image 1">
+                <p>International human rights treaties, like the Convention on the Elimination of All Forms of Discrimination Against Women (CEDAW) and the Convention on the Rights of Persons with Disabilities (CRPD), require states to combat harmful gender stereotypes and promote equality.</p>
+            </div>
+
+            <div class="right-column">
+                <p>Gender stereotypes are generalized beliefs about the roles, behaviors, and attributes expected of women and men. These stereotypes become harmful when they limit individuals’ ability to develop their talents, pursue careers, or make life choices freely. For example, the stereotype that women are natural caregivers often leads to child care duties falling mainly on women, reinforcing inequality.</p>
+                <img src="images/sillouhette2.png" alt="Silhouette Image 2">
+                <p>Gender stereotyping violates human rights when it results in discrimination or injustice, such as failing to criminalize marital rape or dismissing sexual violence due to biased views about victims. These stereotypes negatively impact many rights, including education, health, work, political participation, and freedom from violence.</p>
+                <img src="images/sillouhette3.png" alt="Silhouette Image 3">
+
+            </div>
+        </section> 
+            
+        <section class="identities-layout">
+            <div class="identities-header">
+                <img src="images/identitiy-header.png" alt="Identity Header">
+            </div>
+
+            <div class="identity-main-content">
+                <div class="identity-heading">
+                <h1>Representation of</h1> 
+                <h1>L</h1>
+                <h1>G</h1> 
+                <h1>B</h1> 
+                <h1>T</h1> 
+                <h1>Q</h1> 
+                <h1>+</h1> 
+                <h1>Identities in Mass Media</h1>
+            </div>
+                <p>Since the 1960s, acceptance of LGBT people has grown, 
+                    but many still hide their identities due to fear of 
+                    rejection. Coming out is a crucial but often stressful step toward self-acceptance. 
+                    Media and the internet help LGBT individuals connect and share their stories, 
+                    though portrayals often remain stereotypical or negative. This can harm self-esteem 
+                    and increase feelings of anxiety and depression.
+                 </p>
+                 <p>LGBT youth face higher rates of mental health 
+                    challenges linked to stigma, discrimination, and social pressures. 
+                    These issues can be even greater for LGBT people of color, 
+                    who face additional racism and bias. Research shows mental
+                     health risks vary within the LGBT community, highlighting 
+                     the need for understanding diverse experiences.
+                 </p>
+                 <p>Positive and accurate media representations play an 
+                    important role in supporting LGBT individuals by 
+                    providing role models and reducing feelings of isolation. 
+                    However, continued efforts are needed to improve visibility 
+                    and portrayals to foster greater acceptance and mental well-being.
+                 </p>
+            </div>
+        </section>
+
+        <section class="positive-changes-section" id="positive-changes">
+            <div class="positive-changes-header-container">
+                <h2>Positive Changes: Inclusive Advertising and Diverse Representation</h2>
+                <div class="horizontal-lines">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                </div>
+            </div>
+            <div class="positive-changes-content">
+                <div class="positive-changes-block first-block">
+                    <div class="inner-block-content">
+                    <img src="images/positive-changes.png" alt="People connecting" class="floating-left-graphic">
+                    <p>In the past decade, society has seen significant progress in equality and representation, driven by global movements and initiatives like the United Nations’ Sustainable Development Goals, which emphasize gender equality and reducing all forms of inequality. Advertising plays a key role not just reflecting society but shaping it. Historically, ads have reinforced stereotypes, but the industry is shifting. Since 2015, initiatives like Cannes Lions’ Glass: The Lion for Change have highlighted campaigns challenging gender bias and outdated stereotypes.</p>
+                </div>
+            </div>
+                <div class="positive-changes-block second-block">
+                    <div class="inner-block-content">
+                    <p>Research shows consumers often feel misrepresented in ads, with women frequently over-targeted in traditional categories and underrepresented in others. However, progressive portrayals of all genders lead to more effective advertising, boosting both brand growth and sales. Tools like the Unstereotype Metric reveal that inclusive ads outperform stereotypical ones across the board. The importance of racial and ethnic inclusion has also gained focus, especially after the Black Lives Matter movement in 2020. Inclusive ads not only create emotional connections but also enhance brand impact and sales. Examples range from explicit campaigns addressing stereotypes to more subtle casting choices that reflect real-world diversity.</p>
+                    </div>
+                </div>
+                <div class="positive-changes-block third-block">
+                    <div class="inner-block-content">
+                    <p>Despite progress in gender and racial representation, inclusion of people with disabilities, LGBTQI+ communities, and older adults remains limited. Positive trends show LGBTQI+ individuals appearing more as part of everyday family life rather than stereotypes, and a growing call for age-inclusive advertising that respects the vitality of older generations. Inclusion and diversity are becoming central to creative and effective advertising shaping a more representative and equitable society.</p>
+                    <img src="images/positive-changes2.png" alt="Chat bubbles with diverse people" class="floating-right-graphic">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</body>

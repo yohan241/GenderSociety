@@ -1,0 +1,424 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.3);
+    padding: 3vb;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1000; 
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(2px);
+}
+
+.navbar-brand a {
+    color:var(--orange); 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.navbar-links {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+}
+
+.navbar-links li {
+    margin-left: 20px;
+    margin-right: 20px; 
+}
+
+.navbar-links a {
+    color: var(--offwhite); 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s ease; 
+}
+
+.navbar-links a:hover {
+    color: var(--orange); 
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.search-box input {
+    border: none;
+    padding: 8px 15px;
+    outline: none;
+    background-color: transparent; 
+}
+
+.search-box button {
+    border: none;
+    background-color: transparent;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #777;
+}
+
+:root {
+    --orange: #f4a261;
+    --offwhite: #fefefe;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f6a958;
+    font-family: "Raleway", sans-serif;
+}
+
+/* 1st Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 8vw 60px; /* added top padding for navbar space */
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-text h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 5rem;
+    color: #0b1741;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.quote-section {
+    background-color: #eecce2;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 2px solid #611b80;
+    width: 90%;
+    max-width: 960px;
+    font-family: "Raleway", sans-serif;
+    color: #1c1c1c;
+    font-size: 1rem;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.quote-section p {
+    margin: 0;
+    color: #240057;
+}
+
+/* 2nd Topics Section */
+.gender-topics-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    gap: 30px;
+}
+
+.gender-topics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+}
+
+.topic {
+    padding: 15px 20px;
+    border-radius: 20px;
+    color: #1c1c1c;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    font-family: "Raleway", sans-serif;
+}
+
+.topic.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topic.white {
+    background-color: white;
+    color: #000066;
+    border: 2px solid #999cff;
+}
+
+.topic.orange {
+    background-color: #f55c2c;
+    color: white;
+}
+
+.topic.yellow {
+    background-color: #ffcf3f;
+    color: #000;
+}
+
+.gender-symbols img {
+    max-width: 250px;
+    height: auto;
+}
+
+/* 3rd section */
+.socialization-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 40px 20px;
+}
+
+.socialization-text {
+    max-width: 600px;
+    font-family: "Raleway", sans-serif;
+    color: #1c1c1c;
+    flex: 1 1 350px;
+}
+
+.socialization-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: #0b1741;
+    margin-bottom: 20px;
+}
+
+.socialization-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.socialization-paperclips {
+    display: block;
+    max-width: 200px;
+    margin: 10px 0 20px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.socialization-text blockquote {
+    background-color: #e8d3ee;
+    border-left: 5px solid #611b80;
+    padding: 15px 20px;
+    font-style: italic;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    color: #4b006e;
+}
+
+.socialization-text blockquote span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #240057;
+}
+
+.socialization-image img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-text-pair {
+  position: relative;
+}
+
+.image-text-pair .socialization-image {
+  margin-left: 500px;
+  margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.image-text-pair .socialization-image img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-text-pair #text-2 {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.6;
+  color: #1c1c1c;
+  text-align: justify;
+}
+
+.float-image {
+  float: right;
+  max-width: 150px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-text-pair::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 4th section */
+.legal-perspective-section {
+  background-color: #f4a940; /* Close to the orange background in the image */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.legal-perspective-container {
+  max-width: 800px;
+  background-color: transparent;
+  font-family: 'Arial', sans-serif;
+}
+
+.legal-perspective-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.arrow-icon {
+  color: green;
+  font-size: 1.5rem;
+}
+
+.legal-perspective-header h2 {
+  font-size: 1.25rem;
+  color: #1e2d3b; /* Dark blue */
+  font-weight: bold;
+}
+
+.legal-perspective-text {
+  color: #1e2d3b;
+  font-weight: bold;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+/* 5th section */
+.gender-role-section {
+  background-color: #f6f4f3; /* light beige/cream background */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.gender-role-container {
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-family: 'Arial', sans-serif;
+}
+
+.gender-role-text {
+  flex: 1 1 500px;
+}
+
+.gender-role-text h2 {
+  font-size: 1.5rem;
+  color: #0b2343; /* deep navy blue */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.gender-role-text p {
+  color: #0b2343;
+  font-weight: bold;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.gender-role-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.gender-role-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6th section */
+.csu-gender-section {
+  background-color: #e8d4f2; /* light lavender background */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.csu-gender-container {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.csu-gender-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.csu-gender-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.csu-gender-text {
+  flex: 1 1 500px;
+}
+
+.csu-gender-text h2 {
+  font-size: 1.5rem;
+  color: #2d2452; /* deep violet/navy text */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.csu-gender-text p {
+  color: #2d2452;
+  line-height: 1.6;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.csu-gender-note {
+  margin-top: 1rem;
+  font-style: italic;
+}

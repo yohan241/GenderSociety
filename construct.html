@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Construction</title>
+    <style>
+      /* Dropdown styles for navbar */
+     .navbar-links li {
+        position: relative; /* IMPORTANT: Make li the positioning context */
+      }
+
+      .navbar-links a {
+        border-radius: 8px;
+        transition: background-color 0.25s ease;
+      }
+
+      .navbar-links a:hover,
+      .navbar-links a:focus {
+        background-color: #e0e7ff;
+        outline: none;
+      }
+
+      /* Dropdown container */
+      .dropdown {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+        min-width: 180px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        z-index: 1000;
+      }
+
+      /* Show dropdown on hover */
+      .navbar-links li:hover > .dropdown,
+      .navbar-links li:focus-within > .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* Dropdown links */
+      .dropdown li {
+        list-style: none;
+      }
+
+      .dropdown li a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      .dropdown li a:hover,
+      .dropdown li a:focus {
+        background-color: #c7d2fe;
+        color: #1e3a8a;
+        outline: none;
+        border-radius: 8px;
+      }
+
+      /* Dropdown arrow icon next to TOPICS */
+      .dropdown-arrow {
+        margin-left: 6px;
+        font-size: 0.75em;
+        transition: transform 0.3s ease;
+      }
+
+      /* Rotate arrow on hover */
+      .navbar-links li:hover > a > .dropdown-arrow,
+      .navbar-links li:focus-within > a > .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        .navbar-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+        /* For mobile, dropdown should be toggleable (JS needed) - fallback */
+        .dropdown {
+          position: static;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0) !important;
+          box-shadow: none;
+          padding: 0;
+          background: transparent;
+          min-width: auto;
+        }
+        .dropdown li a {
+          padding-left: 32px;
+        }
+        .dropdown-arrow {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="construct.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#home">Gender &amp; Society</a>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li tabindex="0">
+        <a aria-haspopup="true" aria-expanded="false" aria-controls="topics-dropdown">
+          TOPICS
+          <i class="fas fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown" id="topics-dropdown" role="menu" aria-label="Topics submenu">
+          <li role="none">
+            <a role="menuitem" href="society.html">Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="gender.html">Gender</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="construct.html">Gender As Social Construction</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="family.html">Gender and Family</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="workplace.html">Gender in the Workplace</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="academe.html">Gender and The Academe</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mass-media.html">Mass Media in a Gendered Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="church.html">Gender and Development in the Church</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="politics.html">Gender and Politics</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="violence.html">Gender and Violence</a>
+          </li>
+          
+        </ul>
+      </li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <button type="submit" aria-label="Search"></button>
+    </div>
+  </nav>
+    </div>
+    <div class="section-society" id="home"> 
+        <div class="content-title"> 
+            <h1>Gender as</h1>
+            <h1>Social</h1>
+            <h1><span class="highlight-green">Constructions</span></h1>
+            <div class="content-text">
+                <p>Gender is not innate but is learned through social interaction. It is socially constructed through cultural norms, traditions, and institutions.</p>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <img src="images/construct.png" alt="Image">
+        </div>
+    </div>
+    <section class="scroll-section">
+        <div class="title-bar">
+            <h1>
+                <span class="highlight">SOCIOLOGICAL THEORIES OF GENDER</span>
+            </h1>
+        </div>
+    </section>
+
+    <div class="theories-section">
+        <div class="theories-cards">
+            <div class="theories-card">
+                <div class="theories-text">
+                    <p><strong>Conflict Theory</strong> This perspective, rooted in the ideas of Karl Marx, highlights how gender roles reinforce power structures, with men historically holding dominant positions in society. Gender inequality is viewed as a result of patriarchal systems that benefit men while oppressing women and other gender minorities.</p>
+                </div>
+            </div>
+
+            <div class="theories-card">
+                <div class="theories-text">
+                    <p><strong>Symbolic Interactionism</strong> This theory focuses on daily interactions and how individuals perform gender based on social expectations. It suggests that gender is not a fixed trait but an ongoing social performance influenced by societal feedback.
+                    </p>
+            </div>
+            </div>
+
+            <div class="theories-card">
+            <div class="theories-text">
+                <p><strong>Feminist Theory</strong> Feminist scholars critique traditional gender norms and advocate for gender equality and social change. This theory challenges the patriarchal structures that perpetuate gender discrimination and calls for the dismantling of oppressive gender roles.
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="perspective-section">
+    <div class="perspective-header">
+        <div class="perspective-title">
+        <h1><span class="highlight">Prevailing and Current Gender Perspectives</span></h1>
+        <p>
+            These perspectives refer to the evolving ways society understands gender—
+            moving beyond traditional binary views (male/female) to recognize the complexity 
+            and fluidity of gender identities and experiences.
+        </p>
+        </div>
+        <div class="perspective-image-container">
+        <img src="images/perspective.png" alt="Gender Perspective Icon">
+        </div>
+    </div>
+
+    <div class="perspective-cards">
+        <div class="perspective-card">
+        <div class="perspective-text">
+            <strong>Prevailing Traditional Perspectives:</strong>
+            <ul>
+            <li>Gender is binary: only male or female</li>
+            <li>Roles are fixed: men as leaders, women as caregivers</li>
+            <li>Patriarchal norms dominate</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="perspective-card">
+        <div class="perspective-text">
+            <strong>Current Modern Perspectives:</strong>
+            <ul>
+            <li>Gender is fluid and diverse</li>
+            <li>Emphasis on inclusivity</li>
+            <li>Rights and empowerment for all identities</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="gad-section">
+  <div class="gad-header">
+    <div class="gad-title">
+      <h1><span class="highlight">GAD Mainstreaming in the Philippines</span></h1>
+      <p>
+        Gender Mainstreaming, or Gender and Development (GAD) Mainstreaming, 
+        is the Philippines' main strategy to achieve gender equality across all levels of governance and development. 
+        It was globally adopted through the 1995 Beijing Platform for Action 
+        and aims to create a gender-responsive society where men and women have equal access, control, 
+        and benefit from resources and opportunities.
+      </p>
+    </div>
+
+    <div class="gad-cards">
+      <!-- Horizontal card -->
+      <div class="gad-card-horizontal">
+        <div class="gad-text">
+          <h2><strong>What is the Mainstream?</strong></h2>
+          <p>
+            The “mainstream” refers to dominant systems, ideas, and institutions that shape
+            who gets what in society. Gender mainstreaming ensures that both women and 
+            men can influence and benefit from decisions and development equally.
+          </p>
+        </div>
+      </div>
+
+      <!-- Two vertical cards side by side -->
+      <div class="gad-card-vertical-container">
+        <div class="gad-card-vertical">
+          <div class="gad-text">
+            <strong>Four Entry Points to GAD Mainstreaming</strong>
+            <ul>
+              <li>Policies – Issuance of formal statements (e.g., orders, plans) supporting gender equality.</li>
+              <li>People – Involvement of stakeholders, including:</li>
+              <li>Sponsors – decision-makers (e.g., agency heads)</li>
+              <li>Change Agents – GAD Focal Point System members</li>
+              <li>Targets – staff and clients who experience the changes</li>
+              <li>Advocates – individuals supporting GAD without formal power</li>
+              <li>Programs and Projects – Incorporation of GAD in actual activities like gender analysis and advocacy.</li>
+              <li>Enabling Mechanisms – Systems and resources (e.g., GAD budget, focal points) that sustain GAD efforts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gad-card-vertical">
+          <div class="gad-text">
+            <strong>Levels of Gender Mainstreaming</strong>
+            <ul>
+              <li>Foundation Formation – Raising awareness and building initial support.</li>
+              <li>Installation of Strategic Mechanisms – Establishing structures and tools for GAD implementation.</li>
+              <li>GAD Application – Institutionalizing GAD in planning, budgeting, and programs.</li>
+              <li>Commitment Enhancement – Sustaining efforts and improving responsiveness.</li>
+              <li>Replication and Innovation – Becoming a model GAD institution, sharing practices with others.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last row: goal + image -->
+    <div class="gad-last-row">
+      <div class="gad-last-card">
+        <div class="gad-text">
+          <h2><strong>Key Goal:</strong></h2>
+          <p>
+            To transform institutions and ensure gender concerns
+            become central to all aspects of planning, policy, 
+            and implementation—not just side issues.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="images/keygoal.png" alt="Image">
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+</div> 

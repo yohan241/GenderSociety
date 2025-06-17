@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workplace</title>
+    <style>
+      /* Dropdown styles for navbar */
+     .navbar-links li {
+        position: relative; /* IMPORTANT: Make li the positioning context */
+      }
+
+      .navbar-links a {
+        border-radius: 8px;
+        transition: background-color 0.25s ease;
+      }
+
+      .navbar-links a:hover,
+      .navbar-links a:focus {
+        background-color: #e0e7ff;
+        outline: none;
+      }
+
+      /* Dropdown container */
+      .dropdown {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+        min-width: 180px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        z-index: 1000;
+      }
+
+      /* Show dropdown on hover */
+      .navbar-links li:hover > .dropdown,
+      .navbar-links li:focus-within > .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* Dropdown links */
+      .dropdown li {
+        list-style: none;
+      }
+
+      .dropdown li a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      .dropdown li a:hover,
+      .dropdown li a:focus {
+        background-color: #c7d2fe;
+        color: #1e3a8a;
+        outline: none;
+        border-radius: 8px;
+      }
+
+      /* Dropdown arrow icon next to TOPICS */
+      .dropdown-arrow {
+        margin-left: 6px;
+        font-size: 0.75em;
+        transition: transform 0.3s ease;
+      }
+
+      /* Rotate arrow on hover */
+      .navbar-links li:hover > a > .dropdown-arrow,
+      .navbar-links li:focus-within > a > .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        .navbar-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+        /* For mobile, dropdown should be toggleable (JS needed) - fallback */
+        .dropdown {
+          position: static;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0) !important;
+          box-shadow: none;
+          padding: 0;
+          background: transparent;
+          min-width: auto;
+        }
+        .dropdown li a {
+          padding-left: 32px;
+        }
+        .dropdown-arrow {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="style_workplace.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!--1st section-->
+    <div class="page-container">
+         <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#home">Gender &amp; Society</a>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li tabindex="0">
+        <a aria-haspopup="true" aria-expanded="false" aria-controls="topics-dropdown">
+          TOPICS
+          <i class="fas fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown" id="topics-dropdown" role="menu" aria-label="Topics submenu">
+          <li role="none">
+            <a role="menuitem" href="society.html">Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="gender.html">Gender</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="construct.html">Gender As Social Construction</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="family.html">Gender and Family</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="workplace.html">Gender in the Workplace</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="academe.html">Gender and The Academe</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mass-media.html">Mass Media in a Gendered Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="church.html">Gender and Development in the Church</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="politics.html">Gender and Politics</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="violence.html">Gender and Violence</a>
+          </li>
+          
+        </ul>
+      </li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <button type="submit" aria-label="Search"></button>
+    </div>
+  </nav>
+        
+        <div>
+        <div class="title-section">
+          <h1>GENDER IN THE <br>WORKPLACE</h1>
+        </div>
+        <div class="quote">
+          <p>Our workforce has been better than 
+            <br>before. There might be some 
+            <br>limitations, but we all know that we 
+            <br>always breakthrough.</p>
+        </div>
+
+        <div class="picture">
+        <img src="images/arq.png">
+        </div>
+        </div>
+
+        <!--2nd section-->
+        <div class="gender-sociology-section">
+            <div class="gender-sociology-content">
+                <div class="gender-image">
+                <img src="images/talk.png" alt="People discussing" />
+                </div>
+                <div class="gender-text">
+                <h2>Men and Women in the Workforce</h2>
+                <p>
+                The workforce in the Philippines has been shaped due time. Before, only men can study up to college where they can study medicine, engineering and other courses that “may seem hard” for women to take. Only women from rich families can take what they want. If you're from a poor family, the best you can get if you want to finish college is by teaching- which is highly dominated by women even before. Thanks to people who fought for our freedom, everyone has equal opportunities to choose what they want to be, and that translates to what's happening in the present. Many men are taking education courses, and many women are taking engineering courses. Of course, there are limitations. Like before, labor intensive jobs like construction were dominated by men.                 </p>
+                </div>
+            </div>
+          </div>
+
+        <!--3rd section-->
+        <div class="impact-section">
+          <div class="impact-content">
+            <h2 id="head1">Gender Work Equality</h2>
+              <div class="box-container">
+                <p id="box1">“Achieving generally equal opportunities and results for men and women in 
+                  <br>the workplace is the goal of gender equality, not necessarily identical results
+                  <br>for all”, (Workplace Gender Equality Agency).
+                  </p>
+              </div>
+              <p id="under-box1">Most of the time, gender doesn't matter when having the job done. As long as you
+                <br>do the job, regardless of how fast or slow you do it, you'll be getting the same 
+                  <br>pay as others. This is written in your contract as long as there's no legitimate 
+                    <br>reason why you'll have your salary deduction. There are some exceptions like 
+                      <br>previous work experience, but this doesn't affect gender. This is specifically <br>because of someone's credentials, which everyone should understand.</p>
+            <h2 id="head2">Gender Gap at Work</h2>
+                <p id="under-head2">Gender gap at work is the measure of differences between 
+                  <br>men and women. This is still happening in the present times 
+                    <br>mainly because of preferences. An example of this is in 
+                      <br>customer service. Most of the people prefer to talk to 
+                        <br>women, as they are more emphatic and soft spoken than 
+                          <br>men. Because of this, there would be gaps in promoting 
+                            <br>staff which are not in the control of the management. </p>
+                            <div class="coin-wrapper">
+                              <div class="coin-image">
+                                <img id="first" src="images/coin.png" alt="standing on coin">
+                                <img id="second" src="images/label.png" alt="standing on coin">
+                              </div>
+                              <p id="under-image">
+                                On the contrary, women are most likely to experience lack
+                                <br>of opportunities to work. They are most likely to experience 
+                                <br>informal employment like domestic work, street jobs and 
+                                <br>home-based work that does not provide benefits like
+                                <br>healthcare, leaves, etc.
+                              </p>
+                            </div>
+
+          </div>
+        </div>
+
+        <!--4th section-->
+                    <div class="GAD-section">
+                      <div class="GAD-content">
+                        <h2 class="center-head">GAD and the Filipino Workers</h2>
+
+                        <div class="flag-image">
+                          <img src="images/flag.png" alt="Waving flags">
+                        </div>
+
+                        <div class="GAD-paragraph">
+                          <p>
+                            GAD focuses on ensuring that, in order for women and men to benefit equally,
+                            the interests and experiences of both men and women are taken into consideration 
+                            when designing, implementing, overseeing, and assessing policies, programs, 
+                            and projects in all social, political, civil, and economic domains,
+                          </p>
+                        </div>
+
+                        <div class="GAD-paragraph2">
+                          <p>
+                            Our government is urging everyone to be knowledgeable in varieties of gender 
+                            in our present times. This can be done by their movements and promotions for 
+                            them to disseminate information to everyone so everyone can learn about 
+                            Gender and Development. GAD is focusing on making everything fair and just 
+                            for everything: from opportunities, rights, and benefits.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+         <!--5th section-->    
+                <div class="container">
+                  <div class="header-and-image">
+                    <h1>Gender Equality in the<br />Philippine Labor Market</h1>
+
+                    <div class="image-placeholder">
+                      <img src="images/laboor_market.png" alt="Labor Market Illustration" />
+                    </div>
+                  </div>
+
+                  <div class="highlight-box">
+                    <em>
+                      In addition to having a significantly different trajectory, women's labor force involvement is lower than men's at every stage of life, (Belghith et.al, 2021).
+                    </em>
+                  </div>
+
+                  <p>
+There is a slight difference between men and women in our labor market. The cause of it is our norm, which is we'll try to break through it. In a family, especially when there's a toddler, we are used to seeing more women handling the job than men. This is something that is passed from generations to generations. We are used to it, and we are just following it unconsciously because of our mindset that “if someone is better in this area, let them be with it” which is a sad truth that is happening to us. This problem cannot be solved by the government, or any movement by the GAD as this topic is between partners and their plans for their family.                  </p>
+                </div>
+
+  </body>
+</html>

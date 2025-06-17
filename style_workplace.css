@@ -1,0 +1,339 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.3);
+    padding: 3vb;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1000; 
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(2px);
+}
+
+.navbar-brand a {
+    color:var(--orange); 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.navbar-links {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+}
+
+.navbar-links li {
+    margin-left: 20px;
+    margin-right: 20px; 
+}
+
+.navbar-links a {
+    color: var(--offwhite); 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s ease; 
+}
+
+.navbar-links a:hover {
+    color: var(--orange); 
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.search-box input {
+    border: none;
+    padding: 8px 15px;
+    outline: none;
+    background-color: transparent; 
+}
+
+.search-box button {
+    border: none;
+    background-color: transparent;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #777;
+}
+
+body {
+    background-color: #036147;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+
+
+.title-section h1{
+    color: #f5cbe6;
+    font-family: "Playfair Display", "consolas", "sans-serif";
+    font-weight: bold;
+    font-size: 61.7px;
+    padding-top: 10vh; 
+    padding-left: 22vh;
+    letter-spacing: 3px;
+}
+
+.quote p{
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-top: 1vh; 
+    font-weight: 600;
+    font-size: 2rem;
+    font-style: italic;
+    width: max-content;
+    text-align: center;
+    padding-left: 25vh;
+}
+
+.picture {
+    position: relative;
+    bottom: 350px;
+    left: 800px;
+}
+
+
+/* second section */
+.gender-sociology-section {
+    width: 100%;
+    background: linear-gradient(to right, #036147, #f0f1f5, #f6f3ee);
+    padding: 60px 20px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gender-sociology-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gender-text {
+    flex: 1 1 500px;
+    background-color: var(--green);
+    color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    animation: fadeInUp 3s ease-out 0.5s forwards;
+}
+
+.gender-text h2 {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    animation: fadeInUp 3s ease-out 0.5s forwards;
+}
+
+.gender-text p {
+    color: black;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    animation: fadeInUp 3s ease-out 0.5s forwards;
+}
+
+
+
+/* 3rd section */
+.impact-section {
+  background-color: #036147;
+  padding-left: 100px;
+}
+
+.impact-content {
+    font-family: "Raleway", sans-serif;
+}
+
+#head1 {
+ font-size: 2em;
+  color: white;
+  margin-left: 100px;
+}
+
+.impact-content {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.box-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0px 0px;
+    background-color: #f5cbe6;
+    margin-right: 350px;
+    
+}
+
+#box1 {
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    line-height: 25px;
+    color: black;
+}
+
+#under-box1 {
+    margin-left: 200px;
+    color: #f5cbe6;
+}
+
+#head2 {
+    font-size: 2em;
+    color: white;
+    margin-left: 680px;
+}
+
+#under-head2 {
+    margin-left: 200px;
+    color: #f5cbe6;
+
+}
+
+#first {
+    position: relative;
+    bottom: 170px;
+    left: 800px;
+}
+
+#second {
+    position: relative;
+    bottom: 70px;
+    right: 20px;
+}
+
+.coin-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+#under-image {
+  position: relative;
+  left: 300px;
+  top: -170px;
+  text-align: justify;
+  color: #f5cbe6;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  width: 80%;
+  line-height: 25px;
+}
+
+/* 4th section */
+.GAD-section {
+  background-color: white;
+  padding: 40px 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.GAD-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #036147;
+}
+
+.center-head {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.flag-image img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.GAD-paragraph p,
+.GAD-paragraph2 p {
+  font-size: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: #036147;
+  padding: 0 10px;
+}
+
+/* 5th section */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e4d3c;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.header-and-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-and-image h1 {
+  flex: 1;
+  margin-top: 5rem;
+  font-size: 2em;
+}
+
+.image-placeholder {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+}
+
+.highlight-box {
+  background-color: #fbd9f3;
+  color: #2e2e2e;
+  padding: 15px;
+  border-left: 5px solid #9b59b6;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  color: #e2e2e2;
+}
+

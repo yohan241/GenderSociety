@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender</title>
+    <style>
+      /* Dropdown styles for navbar */
+     .navbar-links li {
+        position: relative; /* IMPORTANT: Make li the positioning context */
+      }
+
+      .navbar-links a {
+        border-radius: 8px;
+        transition: background-color 0.25s ease;
+      }
+
+      .navbar-links a:hover,
+      .navbar-links a:focus {
+        background-color: #e0e7ff;
+        outline: none;
+      }
+
+      /* Dropdown container */
+      .dropdown {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+        min-width: 180px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        z-index: 1000;
+      }
+
+      /* Show dropdown on hover */
+      .navbar-links li:hover > .dropdown,
+      .navbar-links li:focus-within > .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* Dropdown links */
+      .dropdown li {
+        list-style: none;
+      }
+
+      .dropdown li a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      .dropdown li a:hover,
+      .dropdown li a:focus {
+        background-color: #c7d2fe;
+        color: #1e3a8a;
+        outline: none;
+        border-radius: 8px;
+      }
+
+      /* Dropdown arrow icon next to TOPICS */
+      .dropdown-arrow {
+        margin-left: 6px;
+        font-size: 0.75em;
+        transition: transform 0.3s ease;
+      }
+
+      /* Rotate arrow on hover */
+      .navbar-links li:hover > a > .dropdown-arrow,
+      .navbar-links li:focus-within > a > .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        .navbar-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+        /* For mobile, dropdown should be toggleable (JS needed) - fallback */
+        .dropdown {
+          position: static;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0) !important;
+          box-shadow: none;
+          padding: 0;
+          background: transparent;
+          min-width: auto;
+        }
+        .dropdown li a {
+          padding-left: 32px;
+        }
+        .dropdown-arrow {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="gender.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#home">Gender &amp; Society</a>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li tabindex="0">
+        <a aria-haspopup="true" aria-expanded="false" aria-controls="topics-dropdown">
+          TOPICS
+          <i class="fas fa-caret-down dropdown-arrow" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown" id="topics-dropdown" role="menu" aria-label="Topics submenu">
+          <li role="none">
+            <a role="menuitem" href="society.html">Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="gender.html">Gender</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="construct.html">Gender As Social Construction</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="family.html">Gender and Family</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="workplace.html">Gender in the Workplace</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="academe.html">Gender and The Academe</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mass-media.html">Mass Media in a Gendered Society</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="church.html">Gender and Development in the Church</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="politics.html">Gender and Politics</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="violence.html">Gender and Violence</a>
+          </li>
+          
+        </ul>
+      </li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <button type="submit" aria-label="Search"></button>
+    </div>
+  </nav>
+    </div>
+    <div class="section-society" id="home"> 
+        <div class="content-title"> 
+            <span class="circle-bg"></span> 
+            <h1>
+                <span>G</span><span>E</span><span>N</span><span>D</span><span>E</span><span>R</span>
+            </h1>
+
+            <div class="text-quote">
+                <p>Gender refers to the socially constructed roles, behaviors, expressions, and identities of girls, women, boys, men, and gender-diverse people. It is different from sex, which is biologically determined (WHO, 2019).</p>
+            </div>
+            <div class="img-bg"></div>
+                <img src="images/gender.png" alt="Gender Icon" class = img-icon>
+                    
+        </div>
+        
+    </div>
+    <div class="gender-sociology-section">
+            <div class="gender-sociology-content">
+                <div class="gender-image">
+                <img src="images/hap.png" alt="People discussing gender roles" />
+                </div>
+                <div class="gender-text">
+                <h2>Sociology of Gender</h2>
+                <p>
+                    The sociology of gender examines how society influences our understanding and perception of differences between masculinity and femininity. We examine how this, in turn, influences identity and social practices. We pay special focus on the power relationships that follow from the established gender order in a given society, as well as how this changes over time.
+                </p>
+                </div>
+            </div>
+
+        <div class="gender-definitions">
+            <div class="box masculinity">
+            <strong>Masculinity</strong> – what society deems appropriate behaviour for a “man”
+            </div>
+            <div class="box femininity">
+            <strong>Femininity</strong> – what society deems appropriate behaviour for a “woman”
+        </div>
+    </div>
+        <div class="gender-sexuality-section">
+            <div class="gender-sexuality-container">
+                <div class="gender-sexuality-text">
+                    <h2>Gender and Sexuality</h2>
+                    <p>
+                        Gender and sexuality are related but distinct. Gender involves identity and roles, while sexuality is about sexual attraction and behavior. Understanding both helps explain how individuals experience relationships, desire, and identity in diverse ways.
+                    </p>
+                </div>
+                <div class="gender-sexuality-image">
+                    <img src="images/gen.png" alt="Gender and Sexuality Illustration">
+                </div>
+            </div>
+            <div class="gender-sexuality-quote">
+                <p>
+                    These are not just personal identities; they are social identities. They arise from our relationships to other people, and they depend upon social interaction and social recognition. As such, they influence how we understand ourselves in relation to others.
+                </p>
+            </div>
+    </div>
+    <div class="identity-section">
+        <div class="identity-cards">
+            <div class="identity-card">
+            <div class="identity-image">
+                <img src="images/gin.png" alt="Sex Icon">
+            </div>
+            <div class="identity-text">
+                <p><strong>Sex</strong> – biological traits that society associates with being male or female</p>
+            </div>
+            </div>
+
+            <div class="identity-card">
+            <div class="identity-image">
+                <img src="images/gan.png" alt="Gender Icon">
+            </div>
+            <div class="identity-text">
+                <p><strong>Gender</strong> – cultural meanings attached to being masculine & feminine, which influence personal identities (e.g. Man, Woman, Transgender, Intersex, Gender Queer, among others)</p>
+            </div>
+            </div>
+
+            <div class="identity-card">
+            <div class="identity-image">
+                <img src="images/gon.png" alt="Sexuality Icon">
+            </div>
+            <div class="identity-text">
+                <p><strong>Sexuality</strong> – Sexual attraction, practices & identity which may or may not align with sex and gender (e.g. Heterosexual, Homosexual, Bisexual, Queer, among others)</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="sexual-orientation-box">
+            <div class="orientation-text">
+            <h3>Sexual Orientation</h3>
+            <p>Sexual orientation describes a person's pattern of emotional, romantic, or sexual attraction. It includes how people identify themselves (e.g., lesbian, gay, straight, bisexual) and who they are attracted to.</p>
+            </div>
+            <div class="orientation-image">
+            <img src="images/hold.png" alt="LGBT Flag with Hands">
+            </div>
+        </div>
+    <div class="sexual-orientation-forms">
+        <h2>FORMS OF SEXUAL ORIENTATION</h2>
+        <p>
+            There are many ways to describe sexual orientation. And, more sexual orientations<br>
+            have been recognized in recent years
+        </p>
+        <hr>
+
+        <ul>
+            <li><strong>Heterosexual:</strong> Experiencing sexual, romantic, and emotional attraction to people of the opposite sex.</li>
+
+            <li><strong>Gay or Lesbian:</strong> Experiencing sexual, romantic, and emotional attraction to people of the same sex as you.</li>
+
+            <li><strong>Bisexual:</strong> Experiencing sexual, romantic, and emotional attractions to both people of the same and opposite sex. Bisexuality is a continuum; you may not experience it all the time, with the same intensity, or in the same manner.</li>
+
+            <li><strong>Asexual:</strong> People who are asexual have little or no interest in having sex with others. This is not because of religious or ideological reasons. Being asexual doesn’t mean you aren’t interested in close or intimate relationships, though. About 1% of the population is asexual.</li>
+
+            <li><strong>Aromantic:</strong> People who are aromantic do not have romantic feelings toward people of any gender. Some people who are aromantic are asexual but some aren’t.</li>
+
+            <li><strong>Demisexual:</strong> People who are demisexual can only be sexually attracted to someone to whom they feel a deep emotional connection. People who identify as demisexual may identify as heterosexual, gay, lesbian, bisexual, pansexual, or others.</li>
+
+            <li><strong>Pansexual:</strong> Being pansexual means that your sexual attractions are not restricted by sex or the gender binary. Some people are also panromantic, meaning that their romantic feelings aren’t limited by sex or gender.</li>
+        </ul>
+    </div>
+
+        <section class="gender-socialization">
+            <div class="gender-container">
+                <div class="gender-left">
+                <img src="images/gam.png" alt="Gender Socialization Illustration">
+                </div>
+                <div class="gender-right">
+                <h2>Gender Socialization</h2>
+                <p>
+                    Gender socialization is the lifelong process where individuals learn the norms, behaviors, and roles expected of their gender.
+                    It starts from early childhood through parents, media, schools, and peers.
+                </p>
+                <p class="cite">
+                    <span class="green">AGENTS OF GENDER SOCIALIZATION (MCSORLEY, 2014)</span><br>
+                    <strong>We normally refer to the people responsible for our socialisation as agents of socialisation.</strong>
+                </p>
+                <div class="agents">
+                    <div class="agent-box pink">
+                    <img src="images/fam.png" alt="Family">
+                    <span>FAMILY</span>
+                    </div>
+                    <div class="agent-box green">
+                    <img src="images/hats.png" alt="School">
+                    <span>SCHOOL</span>
+                    </div>
+                    <div class="agent-box lightpink">
+                    <img src="images/peers.png" alt="Peers">
+                    <span>PEERS</span>
+                    </div>
+                    <div class="agent-box teal">
+                    <img src="images/tv.png" alt="Media">
+                    <span>MEDIA</span>
+                    </div>
+                    <div class="agent-box lavender">
+                    <img src="images/church.png" alt="Religion">
+                    <span>RELIGION</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="gender-stereotypes-section">
+        <div class="stereotypes-box">
+            <h2>Gender Stereotypes</h2>
+            <p>
+                Gender stereotypes are ideas about how members of a certain gender do or should be or behave.
+                They reflect ingrained biases based on the social norms of that society. Typically, they are
+                considered binary (male/female and feminine/masculine).
+            </p>
+            <ul>
+                <li><strong>Gender:</strong> Gender is a complex system involving roles, identities, expressions, and qualities that have been given meaning by a society. Gender is a social construct separate from sex assigned at birth (Male and Female).</li>
+                <li><strong>Gender norms:</strong> Gender norms are what a society expects from certain genders.</li>
+                <li><strong>Gender roles:</strong> These are behaviors, actions, social roles, and responsibilities a society views as appropriate or inappropriate for certain genders.</li>
+                <li><strong>Gender stereotyping:</strong> This ascribes the stereotypes of a gender group to an individual from that group.</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+</div>
